@@ -1,1 +1,24 @@
 Ada beberapa informasi teks yang harus aku kasih tahu disini. Tolong dibaca ya...
+Jadi, file ini ada .gitignore sebenarnya. Isinya dia mengignore beberapa file seperti:
+- /.phpunit.cache
+- /node_modules
+- /public/build
+- /public/hot
+- /public/storage
+- /storage/*.key
+- /vendor
+- .env
+- .env.backup
+- .env.production
+- .phpunit.result.cache
+- Homestead.json
+- Homestead.yaml
+- auth.json
+- npm-debug.log
+- yarn-error.log
+- /.fleet
+- /.idea
+- /.vscode
+
+Jadi... ya, untuk file /vendor, kalian bisa install ulang menggunakan 'composer install' di perangkat PC/Laptop kalian.
+Untuk sisanya, seperti '.env', ya minta saja ke saya di grup kelompok 4. Terima kasih
