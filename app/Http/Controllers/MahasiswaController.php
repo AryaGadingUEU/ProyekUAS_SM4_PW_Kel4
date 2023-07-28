@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
+use Illuminate\Support\Facades\DB;
 
 class MahasiswaController extends Controller
 {
     public function index()
     {
         $mahasiswa = Mahasiswa::all();
-
-        return "Selamat Routing Anda Sudah Benar";
         return view('mahasiswa.index', compact('mahasiswa'));
     }
 
@@ -24,7 +23,7 @@ class MahasiswaController extends Controller
     {
         $mahasiswa = new Mahasiswa();
         $mahasiswa->nim = $request->input('nim');
-        $mahasiswa->nama = $request->input('nama');
+        $mahasiswa->nama_mahasiswa = $request->input('nama_mahasiswa');
         $mahasiswa->jenis_kelamin = $request->input('jenis_kelamin');
         $mahasiswa->foto = $request->input('foto');
         $mahasiswa->jurusan = $request->input('jurusan');
@@ -34,7 +33,7 @@ class MahasiswaController extends Controller
         $mahasiswa->nama_ibu = $request->input('nama_ibu');
         $mahasiswa->email = $request->input('email');
         $mahasiswa->hp = $request->input('hp');
-
+        
         $mahasiswa->save();
 
         return redirect()->route('mahasiswa.index')->with('success', 'Data mahasiswa berhasil ditambahkan');
@@ -58,7 +57,7 @@ class MahasiswaController extends Controller
     {
         $mahasiswa = Mahasiswa::find($id);
         $mahasiswa->nim = $request->input('nim');
-        $mahasiswa->nama = $request->input('nama');
+        $mahasiswa->nama_mahasiswa = $request->input('nama_mahasiswa');
         $mahasiswa->jenis_kelamin = $request->input('jenis_kelamin');
         $mahasiswa->foto = $request->input('foto');
         $mahasiswa->jurusan = $request->input('jurusan');
